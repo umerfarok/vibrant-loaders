@@ -18,6 +18,7 @@
     ],
     "author": "Umer Farooq",
     "readmeFilename": "README.md",
+    "readme": "README.md",
     "license": "MIT",
     "peerDependencies": {
         "react": "^17.0.0 || ^18.0.0",
