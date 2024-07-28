@@ -16,9 +16,13 @@
         "orange",
         "animation"
     ],
-    "author": "Umer Farooq",
-    "readmeFilename": "README.md",
-    "readme": "README.md",
+    "author": {
+        "name": "Umer Farooq",
+        "email": "umerfarooq.dev@gmail.com.com"
+    },
+    "bugs": {
+        "url": "https://github.com/umerfarok/vibrant-loaders/issues"
+    },
     "license": "MIT",
     "peerDependencies": {
         "react": "^17.0.0 || ^18.0.0",
