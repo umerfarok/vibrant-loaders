@@ -7,6 +7,7 @@ export { default as ClockLoader } from './components/ClockLoader';
 export { default as PulseGridLoader } from './components/PulseGridLoader';
 export { default as RotatingSquaresLoader } from './components/RotatingSquaresLoader';
 export { default as BouncingDotsLoader } from './components/BouncingDotsLoader';
+export { default as ShoppingLoader } from './components/ShoppingLoader';
 export { default as MiniPulseLoader } from './components/MiniPulseLoader';
 export { default as MiniDotsLoader } from './components/MiniDotsLoader';
 export { default as MiniSpinnerLoader } from './components/MiniSpinnerLoader';
