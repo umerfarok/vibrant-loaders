@@ -13,7 +13,6 @@ export { default as ImageSpinLoader } from './components/ImageSpinLoader';
 export { default as CloudLoader } from './components/CloudLoader';
 export { default as BinaryLoader } from './components/BinaryLoader';
 export { default as BubbleLoader } from './components/BubbleLoader';
-export { default as CloudLoader } from './components/CloudLoader';
 export { default as MoleculeLoader } from './components/MoleculeLoader';
 export { default as PendulumLoader } from './components/PendulumLoader';
 export { default as TypewriterLoader } from './components/TypewriterLoader';
