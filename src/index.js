@@ -1,3 +1,4 @@
+// Full screen loaders
 export { default as AtomLoader } from './components/AtomLoader';
 export { default as CosmicLoader } from './components/CosmicLoader';
 export { default as DNALoader } from './components/DNALoader';
@@ -9,6 +10,14 @@ export { default as RotatingSquaresLoader } from './components/RotatingSquaresLo
 export { default as BouncingDotsLoader } from './components/BouncingDotsLoader';
 export { default as ShoppingLoader } from './components/ShoppingLoader';
 export { default as ImageSpinLoader } from './components/ImageSpinLoader';
+export { default as CloudLoader } from './components/CloudLoader';
+export { default as BinaryLoader } from './components/BinaryLoader';
+export { default as BubbleLoader } from './components/BubbleLoader';
+export { default as CloudLoader } from './components/CloudLoader';
+export { default as MoleculeLoader } from './components/MoleculeLoader';
+export { default as PendulumLoader } from './components/PendulumLoader';
+export { default as TypewriterLoader } from './components/TypewriterLoader';
+
 
 // Mini loaders
 export { default as MiniPulseLoader } from './components/MiniPulseLoader';

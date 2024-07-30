@@ -1,18 +1,17 @@
 import React from 'react';
 
 const PulseGridLoader = ({
-  size = 80,
   gridSize = 3,
   dotColor = 'purple-500',
   pulseColor = 'purple-300',
   backgroundColor = 'purple-100'
 }) => {
   return (
-    <div className={`flex items-center justify-center h-screen bg-${backgroundColor}`}>
-      <div className={`grid grid-cols-${gridSize} gap-4 w-${size} h-${size}`}>
+    <div className={`fixed inset-0 flex items-center justify-center bg-${backgroundColor} overflow-hidden`}>
+      <div className={`grid grid-cols-${gridSize} gap-6 w-80 h-80`}>
         {[...Array(gridSize * gridSize)].map((_, i) => (
           <div key={i} className="relative flex items-center justify-center">
-            <div className={`w-4 h-4 bg-${dotColor} rounded-full`} />
+            <div className={`w-6 h-6 bg-${dotColor} rounded-full`} />
             <div
               className={`absolute w-full h-full bg-${pulseColor} rounded-full opacity-0`}
               style={{
@@ -24,7 +23,8 @@ const PulseGridLoader = ({
       </div>
       <style jsx>{`
         @keyframes pulse {
-          0%, 100% { transform: scale(0.5); opacity: 0; }
+          0%, 100% { transform: scale(0.5);
+          opacity: 0; }
           50% { transform: scale(1.5); opacity: 0.7; }
         }
       `}</style>

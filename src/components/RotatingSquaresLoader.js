@@ -1,13 +1,12 @@
 import React from 'react';
 
 const RotatingSquaresLoader = ({
-  size = 80,
   squareColors = ['red-500', 'blue-500', 'green-500', 'yellow-500'],
   backgroundColor = 'gray-100'
 }) => {
   return (
-    <div className={`flex items-center justify-center h-screen bg-${backgroundColor}`}>
-      <div className={`relative w-${size} h-${size}`}>
+    <div className={`fixed inset-0 flex items-center justify-center bg-${backgroundColor} overflow-hidden`}>
+      <div className="relative w-80 h-80">
         {squareColors.map((color, i) => (
           <div
             key={i}

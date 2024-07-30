@@ -1,15 +1,14 @@
 import React from 'react';
 
 const GalaxyLoader = ({
-  size = 80,
   armColor = 'purple-500',
   coreColor = 'yellow-300',
   starColors = ['white', 'blue-200', 'yellow-200'],
   backgroundColor = 'gray-900'
 }) => {
   return (
-    <div className={`flex items-center justify-center h-screen bg-${backgroundColor}`}>
-      <div className={`relative w-${size} h-${size} animate-spin-slow`}>
+    <div className={`fixed inset-0 flex items-center justify-center bg-${backgroundColor} overflow-hidden`}>
+      <div className="relative w-96 h-96 animate-spin-slow">
         {[...Array(4)].map((_, i) => (
           <div 
             key={i}
@@ -20,14 +19,14 @@ const GalaxyLoader = ({
             }}
           />
         ))}
-        <div className={`absolute top-1/2 left-1/2 w-${size/4} h-${size/4} bg-${coreColor} rounded-full transform -translate-x-1/2 -translate-y-1/2`} />
-        {[...Array(50)].map((_, i) => (
+        <div className={`absolute top-1/2 left-1/2 w-24 h-24 bg-${coreColor} rounded-full transform -translate-x-1/2 -translate-y-1/2`} />
+        {[...Array(100)].map((_, i) => (
           <div
             key={i}
             className={`absolute rounded-full bg-${starColors[i % 3]}`}
             style={{
-              width: `${Math.random() * 2 + 1}px`,
-              height: `${Math.random() * 2 + 1}px`,
+              width: `${Math.random() * 3 + 1}px`,
+              height: `${Math.random() * 3 + 1}px`,
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
               opacity: Math.random() * 0.8 + 0.2,

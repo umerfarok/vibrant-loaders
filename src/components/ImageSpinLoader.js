@@ -3,7 +3,6 @@ import { Loader } from 'lucide-react';
 
 const ImageSpinLoader = ({
   imageSrc,
-  size = 80,
   blurStrength = 5,
   spinDuration = 2,
   backgroundColor = 'rgba(255, 255, 255, 0.8)'
@@ -22,24 +21,23 @@ const ImageSpinLoader = ({
 
   const renderSpinner = () => {
     if (!imageSrc || imageError) {
-      return <Loader size={size} className="text-gray-600 animate-spin" />;
+      return <Loader size={80} className="text-gray-600 animate-spin" />;
     }
     if (imageLoaded) {
       return (
         <img 
           src={imageSrc} 
           alt="Loading" 
-          className="rounded-full object-cover animate-spin"
-          style={{ width: size, height: size }}
+          className="w-40 h-40 rounded-full object-cover animate-spin"
         />
       );
     }
-    return <div className="w-16 h-16 bg-gray-200 rounded-full animate-pulse" />;
+    return <div className="w-40 h-40 bg-gray-200 rounded-full animate-pulse" />;
   };
 
   return (
     <div 
-      className="fixed inset-0 flex items-center justify-center z-50"
+      className="fixed inset-0 flex items-center justify-center z-50 overflow-hidden"
       style={{
         backdropFilter: `blur(${blurStrength}px)`,
         backgroundColor,
