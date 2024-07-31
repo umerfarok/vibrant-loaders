@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Loader } from 'lucide-react';
 
-const ImageSpinLoader = ({ imageSrc, size = 200, blurStrength = 5, spinDuration = 2 }) => {
+const ImageSpinLoader = ({ imageSrc, size = 40, spinDuration = 1.5 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
@@ -16,14 +16,14 @@ const ImageSpinLoader = ({ imageSrc, size = 200, blurStrength = 5, spinDuration 
 
   const renderSpinner = () => {
     if (!imageSrc || imageError) {
-      return <Loader size={size} className="text-gray-600 animate-spin" />;
+      return <Loader size={size} className="text-blue-600 animate-spin" />;
     }
     if (imageLoaded) {
       return (
         <img 
           src={imageSrc} 
           alt="Loading" 
-          className="rounded-full object-cover animate-spin"
+          className="rounded-full object-cover"
           style={{ width: size, height: size }}
         />
       );
@@ -32,13 +32,7 @@ const ImageSpinLoader = ({ imageSrc, size = 200, blurStrength = 5, spinDuration 
   };
 
   return (
-    <div 
-      className="fixed inset-0 flex items-center justify-center z-50"
-      style={{
-        backdropFilter: `blur(${blurStrength}px)`,
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-      }}
-    >
+    <div className="inline-flex items-center justify-center">
       <div 
         className="relative"
         style={{
