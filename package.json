@@ -1,12 +1,12 @@
 {
     "name": "vibrant-loaders",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "description": "A collection of unique orange-themed loaders for shopping websites",
     "main": "dist/index.js",
     "module": "dist/index.es.js",
     "files": [
         "dist"
-      ],
+    ],
     "homepage": "https://github.com/umerfarok/vibrant-loaders#readme",
     "scripts": {
         "build": "rollup -c",
@@ -45,8 +45,8 @@
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-postcss": "^4.0.1",
         "tailwindcss": "^3.0.0"
-      },
-      "dependencies": {
+    },
+    "dependencies": {
         "lucide-react": "^0.263.1"
-      }
+    }
 }
