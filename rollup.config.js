@@ -4,6 +4,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
 
 export default {
   input: 'src/index.js',
@@ -29,9 +31,13 @@ export default {
     }),
     commonjs(),
     postcss({
-      extract: true, // Extract CSS to a separate file
-      minimize: true, // Minimize the CSS
+      plugins: [
+        tailwindcss('./tailwind.config.js'),
+        autoprefixer,
+      ],
+      extract: 'index.css',
+      minimize: true,
     }),
-    terser(), // Add terser for minification
+    terser(),
   ],
 };
