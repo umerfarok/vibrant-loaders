@@ -1,4 +1,5 @@
 // Full screen loaders
+import './styles/tailwind.css';
 export { default as AtomLoader } from './components/AtomLoader';
 export { default as CosmicLoader } from './components/CosmicLoader';
 export { default as DNALoader } from './components/DNALoader';

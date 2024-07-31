@@ -1,44 +1,37 @@
 import React from 'react';
 
-const ClockLoader = ({
-  faceColor = 'gray-200',
-  hourColor = 'black',
-  minuteColor = 'gray-600',
-  secondColor = 'red-500',
-  markColor = 'gray-400',
-  backgroundColor = 'white'
-}) => {
+const ClockLoader = ({ size = 200 }) => {
   return (
-    <div className={`fixed inset-0 flex items-center justify-center bg-${backgroundColor} overflow-hidden`}>
-      <div className={`relative w-80 h-80 rounded-full bg-${faceColor} shadow-xl`}>
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="relative rounded-full bg-white shadow-xl" style={{ width: size, height: size }}>
         {[...Array(12)].map((_, i) => (
           <div
             key={i}
-            className={`absolute w-1 h-4 bg-${markColor}`}
+            className="absolute w-1 h-3 bg-gray-400"
             style={{
-              top: '8%',
+              top: '10%',
               left: '50%',
               transform: `rotate(${i * 30}deg) translateX(-50%)`,
-              transformOrigin: '50% 460%',
+              transformOrigin: '50% 450%',
             }}
           />
         ))}
-        <div className={`absolute top-1/2 left-1/2 w-1.5 h-24 bg-${hourColor} rounded-full`} style={{
+        <div className="absolute top-1/2 left-1/2 w-1.5 h-1/3 bg-black rounded-full" style={{
           transform: 'translate(-50%, -100%)',
           transformOrigin: '50% 100%',
           animation: 'rotate 43200s linear infinite',
         }} />
-        <div className={`absolute top-1/2 left-1/2 w-1 h-32 bg-${minuteColor} rounded-full`} style={{
+        <div className="absolute top-1/2 left-1/2 w-1 h-2/5 bg-gray-600 rounded-full" style={{
           transform: 'translate(-50%, -100%)',
           transformOrigin: '50% 100%',
           animation: 'rotate 3600s linear infinite',
         }} />
-        <div className={`absolute top-1/2 left-1/2 w-0.5 h-36 bg-${secondColor} rounded-full`} style={{
+        <div className="absolute top-1/2 left-1/2 w-0.5 h-1/2 bg-red-500 rounded-full" style={{
           transform: 'translate(-50%, -100%)',
           transformOrigin: '50% 100%',
           animation: 'rotate 60s linear infinite',
         }} />
-        <div className={`absolute top-1/2 left-1/2 w-4 h-4 bg-${secondColor} rounded-full transform -translate-x-1/2 -translate-y-1/2`} />
+        <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-red-500 rounded-full transform -translate-x-1/2 -translate-y-1/2" />
       </div>
       <style jsx>{`
         @keyframes rotate {
@@ -48,6 +41,6 @@ const ClockLoader = ({
       `}</style>
     </div>
   );
-}
+};
 
 export default ClockLoader;

@@ -5,7 +5,7 @@ const TypewriterLoader = () => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-900 overflow-hidden">
-      <div className="text-4xl text-green-400 font-mono">
+      <div className="text-3xl text-emerald-400 font-mono">
         {text.split('').map((char, index) => (
           <span
             key={index}

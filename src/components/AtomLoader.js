@@ -1,29 +1,30 @@
 import React from 'react';
 
-const AtomLoader = ({ 
-  coreColor = 'orange-500', 
-  electronColor = 'orange-300', 
-  ringColor = 'orange-400', 
-  backgroundColor = 'orange-50' 
-}) => {
+const AtomLoader = ({ size = 100 }) => {
   return (
-    <div className={`fixed inset-0 flex items-center justify-center bg-${backgroundColor} overflow-hidden`}>
-      <div className="relative w-64 h-64">
-        <div className={`w-16 h-16 bg-${coreColor} rounded-full animate-pulse absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}></div>
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="relative" style={{ width: size, height: size }}>
+        <div className="w-full h-full bg-blue-500 rounded-full animate-pulse"></div>
         {[...Array(3)].map((_, index) => (
           <div 
             key={index}
-            className={`absolute w-full h-full animate-spin`}
-            style={{ animationDuration: `${(index + 1) * 4}s` }}
-          >
-            <div className={`absolute w-4 h-4 bg-${electronColor} rounded-full top-0 left-1/2 transform -translate-x-1/2`}></div>
-          </div>
+            className="absolute w-1/4 h-1/4 bg-blue-300 rounded-full animate-orbit opacity-75"
+            style={{
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              animationDuration: `${(index + 1) * 2}s`,
+            }}
+          ></div>
         ))}
         {[...Array(3)].map((_, index) => (
           <div 
             key={index}
-            className={`absolute w-full h-full border-4 border-${ringColor} rounded-full animate-ping opacity-0`}
+            className="absolute w-full h-full border-4 border-blue-400 rounded-full animate-ping opacity-0"
             style={{
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
               animationDelay: `${index * 0.5}s`,
             }}
           ></div>

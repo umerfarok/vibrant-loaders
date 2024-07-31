@@ -1,17 +1,13 @@
 import React from 'react';
 
-const WaveLoader = ({
-  waveColor = 'blue-400',
-  particleColor = 'white',
-  backgroundColor = 'blue-100'
-}) => {
+const WaveLoader = ({ size = 200 }) => {
   return (
-    <div className={`fixed inset-0 flex items-center justify-center bg-${backgroundColor} overflow-hidden`}>
-      <div className="relative w-96 h-48 overflow-hidden">
+    <div className="flex items-center justify-center h-screen bg-blue-100">
+      <div className="relative" style={{ width: size, height: size / 2, overflow: 'hidden' }}>
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className={`absolute w-full h-full bg-${waveColor} opacity-20`}
+            className="absolute w-full h-full bg-blue-400 opacity-20"
             style={{
               animation: `wave ${3 + i * 0.5}s ease-in-out ${i * 0.2}s infinite alternate`,
               borderRadius: '40% 60% 60% 40% / 60% 60% 40% 40%',
@@ -21,7 +17,7 @@ const WaveLoader = ({
         {[...Array(30)].map((_, i) => (
           <div
             key={i}
-            className={`absolute rounded-full bg-${particleColor}`}
+            className="absolute rounded-full bg-white"
             style={{
               width: `${Math.random() * 6 + 2}px`,
               height: `${Math.random() * 6 + 2}px`,
