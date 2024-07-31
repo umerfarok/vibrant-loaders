@@ -1,6 +1,6 @@
 {
     "name": "vibrant-loaders",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "A collection of unique orange-themed loaders for shopping websites",
     "main": "dist/index.js",
     "module": "dist/index.es.js",
